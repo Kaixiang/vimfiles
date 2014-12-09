@@ -8,9 +8,8 @@ script:
   - sh /tmp/vim-vimlint/bin/vimlint.sh -l /tmp/vim-vimlint -p /tmp/vim-vimlparser -v vimrc *.vim config lib
   - ln -s $PWD $HOME/.vim
   - mkdir $HOME/bin
-  - BRANCH=git rev-parse --abbrev-ref HEAD
-  - git checkout 'origin/master^'
+  - BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  - git checkout origin/master^
   - ./install
   - git checkout $BRANCH
-  - ./update
   - $HOME/bin/vim-update
