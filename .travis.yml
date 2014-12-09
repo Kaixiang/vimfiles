@@ -6,6 +6,7 @@ before_script:
     - sh -e /etc/init.d/xvfb start
 script:
   - sh /tmp/vim-vimlint/bin/vimlint.sh -l /tmp/vim-vimlint -p /tmp/vim-vimlparser -v vimrc *.vim config lib
+  - ln -s $PWD $HOME/.vim
   - git checkout HEAD^
   - ./install
   - ./update
