@@ -9,9 +9,8 @@ script:
   - ln -s $PWD $HOME/.vim
   - mkdir $HOME/bin
   - BRANCH=$(git rev-parse --abbrev-ref HEAD)
-  - git fetch --all
-  - git checkout master
-  - git checkout HEAD^
+  - git fetch origin master:master
+  - git checkout master^
   - ./install
   - git checkout $BRANCH
   - $HOME/bin/vim-update
