@@ -5,6 +5,18 @@
 FILES_TO_LINK="vimrc gvimrc"
 LOCALS=".vimrc.local.before .vimrc.local"
 
+DIR=$(cd $(dirname $0) && pwd)
+
+if [ "$DIR" != "$HOME/.vim" ]; then
+  dot_file=$HOME/.vim
+  if [ ! -e $dot_file ]; then
+    echo "Detected clone outside of ~/.vim, symlinking"
+    ln -s $DIR $dot_file
+  else
+    echo "You already have a .vim directory."
+  fi
+fi
+
 pushd $HOME/.vim
 
 if [ -e $HOME/.vim/bundle/neobundle.vim ]; then
