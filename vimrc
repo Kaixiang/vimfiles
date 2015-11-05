@@ -59,5 +59,9 @@ endif
 runtime! lib/functions.vim
 runtime! lib/auto_commands.vim
 
+
 silent! source ~/.vimrc.local
 
+" ----
+nnoremap ; :
+" ----

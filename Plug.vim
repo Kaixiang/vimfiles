@@ -25,6 +25,10 @@ call plug#begin('~/.vim/plugged')
   endif
 " }}}
 
+" AutoSave {{{
+  Plug 'vim-scripts/vim-auto-save'
+" }}}
+
 " UI Additions {{{
   " Colors {{{
     Plug 'dolio/vim-hybrid'
